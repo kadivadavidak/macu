@@ -13,8 +13,8 @@ function App() {
     (animal) => {
       return (
         <tr key={animal.id}>
-          <td>{animal.name}</td>
-          <td>{animal.age}</td>
+          <td className="responsive">{animal.name}</td>
+          <td className='responsive'>{animal.age}</td>
           <td>{animal.species}</td>
         </tr>
       )
