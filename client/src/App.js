@@ -27,7 +27,7 @@ function App() {
         <thead>
           <tr>
           <th>Name/Age</th>
-          <th></th>
+          <th className='responsive'></th>
           <th>Species</th>
           </tr>
         </thead>

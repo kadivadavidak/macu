@@ -39,6 +39,11 @@
 
 @media only screen and (max-width: 600px){
   td.responsive {
-    display: table-row;
+    display: block !important; 
+    border-bottom: none;
+  }
+
+  th.responsive {
+    display: none;
   }
 }

@@ -2,6 +2,17 @@ const data = require("../server/data");
 
 const isPrime = function (input) {
     // your code here:  this function accepts a positive integer 'input' and should return true if the integer is prime and false if it is not (for simplicity, do not consider 0 or 1 as prime)
+
+    // Not the most efficient solution, but quick to write and easy to understand
+    // Check all numbers up to {input}, and see if it divides evenly into {input}, and return false if true
+    // If none of the nubers from 2 to {input} are evenly divisible, it's a prime number
+    for (let i = 2; i < input; i++) {
+        if(input % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
 };
 
 const nameVowels = function () {
