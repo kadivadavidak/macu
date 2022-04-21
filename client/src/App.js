@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { CallApi } from './hooks';
+import Table from 'react-bootstrap/Table';
 
 function App() {
 
@@ -11,8 +12,9 @@ function App() {
   const DisplayAnimals = data.map(
     (animal) => {
       return (
-        <tr>
+        <tr key={animal.id}>
           <td>{animal.name}</td>
+          <td>{animal.age}</td>
           <td>{animal.species}</td>
         </tr>
       )
@@ -21,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <table className="table table-striped">
+      <Table striped hover>
         <thead>
           <tr>
           <th>Name/Age</th>
@@ -32,7 +34,7 @@ function App() {
         <tbody>
           {DisplayAnimals}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }
