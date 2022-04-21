@@ -1,23 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import { CallApi } from './hooks';
 
 function App() {
+
+  const data = CallApi();
+
+  console.log(data);
+
+  const DisplayAnimals = data.map(
+    (animal) => {
+      return (
+        <tr>
+          <td>{animal.name}</td>
+          <td>{animal.species}</td>
+        </tr>
+      )
+    }
+  )
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+          <th>Name/Age</th>
+          <th></th>
+          <th>Species</th>
+          </tr>
+        </thead>
+        <tbody>
+          {DisplayAnimals}
+        </tbody>
+      </table>
     </div>
   );
 }
